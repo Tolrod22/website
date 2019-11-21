@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <title>Tolrod - CSI 1</title>
+    <link rel="icon" type="image/png" href="../images/ballon.png"/>
+
+    <!-- JavaScripts -->
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../js/bootstrap.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../js/bootstrap-datepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../js/bootstrap-datepicker.fr.min.js" charset="UTF-8"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand text-primary" href="../v2">Tolrod</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link text-primary" href="../v2">Accueil<span
+                        class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-primary" href="../meteo">Météo</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Calendriers
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item font-weight-bolder" href="">CSI 1</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="../csi2">CSI 2</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="../ensibs">ENSIBS</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="mx-auto" style="width: 300px;">
+        <h5>CS Illifaut 1
+            <button type="button" class="btn btn-outline-primary" onclick="displayFilterMenu()"
+                    style="margin-bottom: 0.25rem !important; margin-top: 0.25rem !important;">Filtrer
+            </button>
+            <a href="https://foot22.fff.fr/competitions/?id=364241&poule=7&phase=1&type=ch&tab=ranking" target="_blank">
+                <button type="button" class="btn btn-outline-primary"
+                        style="margin-bottom: 0.25rem !important; margin-top: 0.25rem !important;">Classement
+                </button>
+            </a>
+        </h5>
+    </div>
+
+    <div id="menuFiltre" hidden>
+        <div class="input-group mb-5" style="margin-bottom: 0.25rem !important">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Journée</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Numéro de journée" aria-label="Numéro de journée"
+                   aria-describedby="basic-addon1" id="inputJournee" value="" onkeypress="pressEnter(event);">
+        </div>
+
+        <div class="input-group mb-5" style="margin-bottom: 0.25rem !important">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputDomicile">Domicile</label>
+            </div>
+            <select class="custom-select" id="inputDomicile">
+            </select>
+        </div>
+
+        <div class="input-group mb-5" style="margin-bottom: 0.25rem !important">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputExterieur">Extérieur</label>
+            </div>
+            <select class="custom-select" id="inputExterieur">
+            </select>
+        </div>
+
+        <div class="input-group mb-5 date" style="margin-bottom: 0.25rem !important">
+            <input type="text" class="form-control" id="inputDate" value="" onkeypress="pressEnter(event);">
+            <div class="input-group-append">
+                <span class="btn btn-outline-secondary"><i class="fas fa-calendar"></i></span>
+            </div>
+        </div>
+
+        <div>
+            <button type="button" class="btn btn-outline-primary btn-lg btn-block" onclick="filtrer()"
+                    style="margin-bottom: 0.25rem !important;">Chercher
+            </button>
+        </div>
+    </div>
+
+    <table class="table table-striped table-sm table-bordered table-responsive-xl" id="table">
+        <thead class="thead-light">
+        <tr>
+            <th style="width : 10%" scope="col">Journée</th>
+            <th style="width : 33%" scope="col">Domicile</th>
+            <th style="width : 6%" style="width : 6%" scope="col">Score</th>
+            <th style="width : 33%" scope="col">Extérieur</th>
+            <th style="width : 12%" scope="col">Date</th>
+            <th style="width : 6%" scope="col">Heure</th>
+        </tr>
+        </thead>
+        <tbody id="matchs">
+        </tbody>
+    </table>
+    <div class="alert alert-danger" id="alerte" hidden>
+        Aucun match correspondant à vos critères de recherche
+    </div>
+    <div class="alert alert-danger" id="erreurChargement" hidden>
+        Le calendrier a rencontré un problème
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('.input-group.date').datepicker({
+            format: "dd/mm/yyyy",
+            todayBtn: "linked",
+            language: "fr",
+            autoclose: true,
+            orientation: "auto left",
+        });
+    });
+</script>
+
+<script type="text/javascript" src="csi1.js"></script>
+</body>
+</html>

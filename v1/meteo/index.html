@@ -1,0 +1,119 @@
+<head>
+	<title>M&eacute;t&eacute;o</title>
+	<link rel="icon" type="image/png" href="soleil.png"/>
+	<script type="text/javascript" src="meteo.js"></script>
+	<link rel="stylesheet" href="meteo.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="overflow:auto">
+    <div class="w3-container w3-cyan">
+		<h1 class="w3-bar-item"><i class="fas fa-cloud-sun-rain"></i>  M&eacute;t&eacute;o</h1>
+	</div>
+	
+	<div class="w3-bar w3-cyan">
+	    <a href="meteo.html" class="w3-bar-item w3-btn w3-hover-black"><i class="fas fa-home"></i> Accueil</a>
+	    <a onclick="document.getElementById('contact').style.display='block'" class="w3-bar-item w3-btn w3-hover-black"><i class="fas fa-envelope"></i> Contact</a>
+	    <a onclick="document.getElementById('aide').style.display='block'" class="w3-bar-item w3-btn w3-hover-black"><i class="fas fa-question-circle"></i> Aide</a>
+	</div>
+
+	<div class="w3-container">
+		<br>
+	  	<input class="w3-input w3-border w3-round w3-light-grey" type="text" style="width:50%" id="ville" placeholder="Saisir ville" onkeypress="pressEnter(event);">     <button class="w3-btn w3-margin w3-round w3-cyan" onclick="meteo()">Valider</button>
+	</div>
+
+	<div class="w3-container" id="divErreur" hidden>
+		<h3 class="w3-text-red" id="erreurVille"></h3>
+	</div>
+
+	<div class="w3-container" id="divResults" hidden>
+		<br>
+		<table class="w3-table w3-border w3-bordered">
+			<tr>
+	  			<td class="w3-td1">Ville</td>
+	  			<td class="w3-td2"><button class="w3-btn w3-round w3-cyan" id="detailsVille" onclick="infosVille()"/></td>
+	  			<td id="nomVille"></td>
+			</tr>
+			<tr id="trLongitude" class="w3-light-gray" hidden>
+	  			<td class="w3-td1">Longitude</td>
+	  			<td class="w3-td2"></td>
+	  			<td id="longitude"></td>
+			</tr>
+			<tr id="trLatitude" class="w3-light-gray" hidden>
+	  			<td class="w3-td1">Latitude</td>
+	  			<td class="w3-td2"></td>
+	  			<td id="latitude"></td>
+			</tr>
+			<tr>
+	  			<td class="w3-td1">M&eacute;t&eacute;o g&eacute;n&eacute;rale</td>
+	  			<td class="w3-td2"></td>
+	  			<td id="temps"></td>
+			</tr>
+			<tr>
+	  			<td class="w3-td1">Temp&eacute;rature</td>
+	  			<td class="w3-td2"><button class="w3-btn w3-round w3-cyan" id="detailsTemperature" onclick="infosTemperature()"></td>
+	  			<td id="temperature"></td>
+			</tr>
+			<tr id="trTempMin" class="w3-light-gray" hidden>
+	  			<td class="w3-td1">Température minimale</td>
+	  			<td class="w3-td2"></td>
+	  			<td id="temperatureMin"></td>
+			</tr>
+			<tr id="trTempMax" class="w3-light-gray" hidden>
+	  			<td class="w3-td1">Température maximale</td>
+	  			<td class="w3-td2"></td>
+	  			<td id="temperatureMax"></td>
+			</tr>
+			<tr>
+	  			<td class="w3-td1">Humidit&eacute;</td>
+	  			<td class="w3-td2"></td>
+	  			<td id="humidite"></td>
+			</tr>
+			<tr>
+	  			<td class="w3-td1">Pression</td>
+	  			<td class="w3-td2"></td>
+	  			<td id="pression"></td>
+			</tr>
+			<tr>
+	  			<td class="w3-td1">Vitesse du vent</td>
+	  			<td class="w3-td2"><button class="w3-btn w3-round w3-cyan" id="detailsVent" onclick="infosVent()"></td>
+	  			<td id="vitesseVent"></td>
+			</tr>
+			<tr id="trDirectionVent" class="w3-light-gray" hidden>
+	  			<td class="w3-td1">Direction du vent</td>
+	  			<td class="w3-td2"></td>
+	  			<td id="directionVent"></td>
+			</tr>
+			<tr>
+	  			<td class="w3-td1">Nuages</td>
+	  			<td class="w3-td2"></td>
+	  			<td id="nuages"></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="footer" style="height:5%">
+	  		<h6 style="margin:3px">&copy; Copyright Lo&iuml;c Travaill&eacute;</h6>
+	</div>
+	
+	<div id="contact" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <p>Envoyez un e-mail à l'adresse suivante :</p>
+                <p>contact@loic-travaille-meteo.com</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="aide" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <span onclick="document.getElementById('aide').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <p>Saisissez une ville dans le champ de saisie</p>
+                <p>Cliquez sur le bouton "Valider"</p>
+            </div>
+        </div>
+    </div>
+</body>
