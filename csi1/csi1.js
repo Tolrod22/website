@@ -394,11 +394,11 @@ function displayMatchs(json) {
         let heure = journees[i]['heure'];
         document.getElementById("matchs").innerHTML = document.getElementById("matchs").innerHTML +
             "<tr id=\"match" + numero + "\">" +
-            "<th scope=\"row\" class=\"text-capitalize\" id=\"journee" + numero + "\"> Journée " + numero + "</th>" +
+            "<th scope=\"row\" class=\"text - capitalize\" id=\"date" + numero + "\">" + date + "</td>" +
             "<td class=\"text - capitalize\" id=\"domicile" + numero + "\">" + cleanString(domicile) + "</td>" +
             "<td class=\"text - capitalize\" id=\"score" + numero + "\">" + score + "</td>" +
             "<td class=\"text - capitalize\" id=\"exterieur" + numero + "\">" + cleanString(exterieur) + "</td>" +
-            "<td class=\"text - capitalize\" id=\"date" + numero + "\">" + date + "</td>" +
+            "<td class=\"text-capitalize\" id=\"journee" + numero + "\"> Journée " + numero + "</th>" +
             "<td class=\"text - capitalize\" id=\"heure" + numero + "\">" + heure + "</td>" +
             "</tr>";
     }

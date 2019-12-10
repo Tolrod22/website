@@ -1,0 +1,8 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^tolrod\.yj\.fr$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.tolrod\.yj\.fr$
+RewriteRule ^(.*)$ "https\:\/\/www\.tolrod\.tk\/$1" [R=301,L]
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]

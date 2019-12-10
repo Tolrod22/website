@@ -41,20 +41,12 @@
 			"score" : "2 - 1"
 		},
 		{
-			"numero" : "6",
-			"domicile" : "\"Yvignac US\"",
-			"exterieur" : "\"Illifaut CS\"",
-			"date" : "22/12/2019",
-			"heure" : "15:00",
-			"score" : "  -  "
-		},
-		{
 			"numero" : "7",
 			"domicile" : "\"Illifaut CS\"",
 			"exterieur" : "\"Trélivan AS 2\"",
 			"date" : "24/11/2019",
 			"heure" : "15:00",
-			"score" : "  -  "
+			"score" : "1 - 5"
 		},
 		{
 			"numero" : "8",
@@ -70,13 +62,21 @@
 			"exterieur" : "\"Merdrignac CS 2\"",
 			"date" : "08/12/2019",
 			"heure" : "15:00",
-			"score" : "  -  "
+			"score" : "0 - 1"
 		},
 		{
 			"numero" : "10",
 			"domicile" : "\"Caulnes Rance FC\"",
 			"exterieur" : "\"Illifaut CS\"",
 			"date" : "15/12/2019",
+			"heure" : "15:00",
+			"score" : "  -  "
+		},
+		{
+			"numero" : "6",
+			"domicile" : "\"Yvignac US\"",
+			"exterieur" : "\"Illifaut CS\"",
+			"date" : "22/12/2019",
 			"heure" : "15:00",
 			"score" : "  -  "
 		},
