@@ -33,14 +33,6 @@
 			"score" : "8 - 3"
 		},
 		{
-			"numero" : "1",
-			"domicile" : "\"Plumieux ESAP 3\"",
-			"exterieur" : "\"Illifaut CS 2\"",
-			"date" : "17/11/2019",
-			"heure" : "13:30",
-			"score" : "  -  "
-		},
-		{
 			"numero" : "7",
 			"domicile" : "\"Saint Barnabé AS 2\"",
 			"exterieur" : "\"Illifaut CS 2\"",
@@ -78,6 +70,14 @@
 			"exterieur" : "\"Trévé Sport 2\"",
 			"date" : "22/12/2019",
 			"heure" : "15:00",
+			"score" : "  -  "
+		},
+				{
+			"numero" : "1",
+			"domicile" : "\"Plumieux ESAP 3\"",
+			"exterieur" : "\"Illifaut CS 2\"",
+			"date" : "12/01/2020",
+			"heure" : "13:00",
 			"score" : "  -  "
 		},
 		{
