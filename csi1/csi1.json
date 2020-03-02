@@ -49,14 +49,6 @@
 			"score" : "1 - 5"
 		},
 		{
-			"numero" : "8",
-			"domicile" : "\"Brusvily US\"",
-			"exterieur" : "\"Illifaut CS\"",
-			"date" : "01/12/2019",
-			"heure" : "15:00",
-			"score" : "  -  "
-		},
-		{
 			"numero" : "9",
 			"domicile" : "\"Illifaut CS\"",
 			"exterieur" : "\"Merdrignac CS 2\"",
@@ -78,7 +70,7 @@
 			"exterieur" : "\"Illifaut CS\"",
 			"date" : "12/01/2020",
 			"heure" : "15:00",
-			"score" : "  -  "
+			"score" : "4 - 2"
 		},
 		{
 			"numero" : "11",
@@ -86,7 +78,7 @@
 			"exterieur" : "\"Evran Stade 2\"",
 			"date" : "19/01/2020",
 			"heure" : "15:00",
-			"score" : "  -  "
+			"score" : "0 - 1"
 		},
 		{
 			"numero" : "12",
@@ -94,7 +86,7 @@
 			"exterieur" : "\"Illifaut CS\"",
 			"date" : "26/01/2020",
 			"heure" : "15:00",
-			"score" : "  -  "
+			"score" : "0 - 8"
 		},
 		{
 			"numero" : "13",
@@ -102,7 +94,15 @@
 			"exterieur" : "\"Plélan Vildé FC 2\"",
 			"date" : "09/02/2020",
 			"heure" : "15:00",
-			"score" : "  -  "
+			"score" : "2 - 4"
+		},
+		{
+			"numero" : "8",
+			"domicile" : "\"Brusvily US\"",
+			"exterieur" : "\"Illifaut CS\"",
+			"date" : "16/02/2020",
+			"heure" : "15:00",
+			"score" : "2 - 1"
 		},
 		{
 			"numero" : "14",
@@ -110,7 +110,7 @@
 			"exterieur" : "\"Illifaut CS\"",
 			"date" : "01/03/2020",
 			"heure" : "15:30",
-			"score" : "  -  "
+			"score" : "1 - 1"
 		},
 		{
 			"numero" : "15",

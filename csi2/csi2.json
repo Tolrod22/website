@@ -22,7 +22,7 @@
 			"exterieur" : "\"Plémet Centre Bretagne 4\"",
 			"date" : "20/10/2019",
 			"heure" : "15:30",
-			"score" : "  -  "
+			"score" : "  - FG"
 		},
 		{
 			"numero" : "5",
@@ -38,7 +38,7 @@
 			"exterieur" : "\"Illifaut CS 2\"",
 			"date" : "24/11/2019",
 			"heure" : "15:00",
-			"score" : "  -  "
+			"score" : "Reporté"
 		},
 		{
 			"numero" : "8",
@@ -62,39 +62,31 @@
 			"exterieur" : "\"Illifaut CS 2\"",
 			"date" : "15/12/2019",
 			"heure" : "13:00",
-			"score" : "  -  "
+			"score" : "Reporté"
 		},
 				{
 			"numero" : "6",
 			"domicile" : "\"Illifaut CS 2\"",
 			"exterieur" : "\"Trévé Sport 2\"",
-			"date" : "22/12/2019",
-			"heure" : "15:00",
-			"score" : "  -  "
-		},
-				{
-			"numero" : "1",
-			"domicile" : "\"Plumieux ESAP 3\"",
-			"exterieur" : "\"Illifaut CS 2\"",
 			"date" : "12/01/2020",
-			"heure" : "13:00",
-			"score" : "  -  "
+			"heure" : "15:00",
+			"score" : "2 - 0"
 		},
 		{
 			"numero" : "11",
 			"domicile" : "\"Illifaut CS 2\"",
 			"exterieur" : "\"Plémy AL 2\"",
 			"date" : "19/01/2020",
-			"heure" : "15:00",
-			"score" : "  -  "
+			"heure" : "13:00",
+			"score" : "2 - 7"
 		},
 		{
 			"numero" : "12",
 			"domicile" : "\"Illifaut CS 2\"",
 			"exterieur" : "\"Plumieux ESAP 3\"",
 			"date" : "26/01/2020",
-			"heure" : "15:00",
-			"score" : "  -  "
+			"heure" : "13:00",
+			"score" : "2 - 3"
 		},
 		{
 			"numero" : "13",
@@ -102,7 +94,15 @@
 			"exterieur" : "\"Illifaut CS 2\"",
 			"date" : "09/02/2020",
 			"heure" : "13:00",
-			"score" : "  -  "
+			"score" : "8 - 1"
+		},
+		{
+			"numero" : "1",
+			"domicile" : "\"Plumieux ESAP 3\"",
+			"exterieur" : "\"Illifaut CS 2\"",
+			"date" : "23/02/2020",
+			"heure" : "13:30",
+			"score" : "6 - 2"
 		},
 		{
 			"numero" : "14",
@@ -110,7 +110,7 @@
 			"exterieur" : "\"Merdrignac CS 3\"",
 			"date" : "01/03/2020",
 			"heure" : "15:30",
-			"score" : "  -  "
+			"score" : "1 - 8"
 		},
 		{
 			"numero" : "15",
