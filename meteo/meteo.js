@@ -9,8 +9,8 @@ function meteo() {
             if (xhttp.status == 200) {
                 let json = JSON.parse(xhttp.responseText);
                 console.log(json);
-                document.getElementById("nomVille").innerHTML = ville + "      " + "<img src=\"http://flags.fmcdn.net/data/flags/w580/" + json["sys"]["country"].toLowerCase() + ".png\" style=\"width:28px\">";
-                document.getElementById("meteoGenerale").innerHTML = json["weather"][0]["description"].charAt(0).toUpperCase() + json["weather"][0]["description"].slice(1).toLowerCase() + "   " + "<img src=\"http://openweathermap.org/img/w/" + json["weather"][0]["icon"] + ".png\">";
+                document.getElementById("nomVille").innerHTML = ville + "      " + "<img src=\"//flags.fmcdn.net/data/flags/w580/" + json["sys"]["country"].toLowerCase() + ".png\" style=\"width:28px\">";
+                document.getElementById("meteoGenerale").innerHTML = json["weather"][0]["description"].charAt(0).toUpperCase() + json["weather"][0]["description"].slice(1).toLowerCase() + "   " + "<img src=\"//openweathermap.org/img/w/" + json["weather"][0]["icon"] + ".png\">";
                 document.getElementById("temperature").innerHTML = json["main"]["temp"] + " &deg;C";
                 document.getElementById("pression").innerHTML = json["main"]["pressure"] + " hPa";
                 document.getElementById("humidite").innerHTML = json["main"]["humidity"] + " %";
@@ -26,7 +26,7 @@ function meteo() {
             }
         }
     };
-    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + ville + "&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
+    xhttp.open("GET", "//api.openweathermap.org/data/2.5/weather?q=" + ville + "&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
     xhttp.send();
 }
 
@@ -53,7 +53,7 @@ function infosVille() {
         }
         ;
     }
-    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + ville + ",fr&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
+    xhttp.open("GET", "//api.openweathermap.org/data/2.5/weather?q=" + ville + ",fr&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
     xhttp.send();
 }
 
@@ -80,7 +80,7 @@ function infosTemperature() {
         }
         ;
     }
-    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + ville + ",fr&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
+    xhttp.open("GET", "//api.openweathermap.org/data/2.5/weather?q=" + ville + ",fr&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
     xhttp.send();
 }
 
@@ -104,7 +104,7 @@ function infosVent() {
         }
         ;
     }
-    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + ville + ",fr&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
+    xhttp.open("GET", "//api.openweathermap.org/data/2.5/weather?q=" + ville + ",fr&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
     xhttp.send();
 }
 
