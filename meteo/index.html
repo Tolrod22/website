@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../frameworks/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../frameworks/fontawesome.css"
+    <link rel="stylesheet" href="../res/css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
     <!-- JavaScripts -->
-    <script type="text/javascript" src="../frameworks/bootstrap/js/jquery.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="../frameworks/bootstrap/js/bootstrap.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../res/js/jquery-3.4.1.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../res/js/bootstrap.js" charset="UTF-8"></script>
 
     <title>Tolrod - Météo</title>
     <link rel="icon" type="image/png" href="../res/pictures/soleil.png"/>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand text-primary" href="../">Tolrod</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <a class="navbar-brand" href="../">Tolrod</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -29,13 +29,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link text-primary" href="../">Accueil<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../">Accueil<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-primary font-weight-bolder" href="../meteo">Météo</a>
+                <a class="nav-link font-weight-bolder" href="../meteo">Météo</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button"
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     Calendriers
@@ -52,88 +52,101 @@
     </div>
 </nav>
 
-<div class="px-5 input-group mt-2 mb-2">
-    <label for="inputVille"></label><input class=" mr-2 form-control border border-primary rounded" type="text" placeholder="Saisir ville"
-                                           id="inputVille"
-                                           onkeypress="pressEnter(event);">
-    <button type="button" class="btn btn-outline-primary" onclick="meteo()">Chercher</button>
+<div class="container">
+    <br>
+    <div class="form-group">
+        <label for="inputVille">Ville</label>
+        <input class="form-control border border-primary rounded"
+               type="text"
+               placeholder="Saisir ville"
+               id="inputVille"
+               onkeypress="pressEnter(event)">
+    </div>
+    <button class="btn btn-primary" onclick="meteo()">Chercher</button>
+    <br>
+    <br>
+
+    <div class="alert alert-danger" id="divErreur" hidden>
+        Cette ville n'existe pas
+    </div>
+
+    <table class="table" id="tableMeteo" hidden>
+        <tbody>
+        <tr id="trVille">
+            <th scope="row" style="vertical-align: middle; width:30%"><h4>Ville</h4></th>
+            <td class="text-capitalize"><h4 id="nomVille"></h4></td>
+            <td>
+                <button type="button" class="btn btn-primary" onclick="infosVille()">
+                    <i class="fas fa-plus" id="boutonVille"></i></button>
+            </td>
+        </tr>
+        <tr class="table-active" id="trLongitude" hidden>
+            <th scope="row" style="vertical-align: middle">Longitude</th>
+            <td id="longitude"></td>
+            <td></td>
+        </tr>
+        <tr class="table-active" id="trLatitude" hidden>
+            <th scope="row" style="vertical-align: middle">Latitude</th>
+            <td id="latitude"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row" style="vertical-align: middle">Météo générale</th>
+            <td id="meteoGenerale"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row" style="vertical-align: middle">Température</th>
+            <td id="temperature"></td>
+            <td>
+                <button type="button" class="btn btn-primary" onclick="infosTemperature()">
+                    <i class="fas fa-plus" id="boutonTemperature"></i></button>
+            </td>
+        </tr>
+        <tr class="table-active" id="trTemperatureMin" hidden>
+            <th scope="row" style="vertical-align: middle">Température minimale</th>
+            <td id="temperatureMin"></td>
+            <td></td>
+        </tr>
+        <tr class="table-active" id="trTemperatureMax" hidden>
+            <th scope="row" style="vertical-align: middle">Température maximale</th>
+            <td id="temperatureMax"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row" style="vertical-align: middle">Humidité</th>
+            <td id="humidite"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row" style="vertical-align: middle">Pression</th>
+            <td id="pression"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row" style="vertical-align: middle">Vent</th>
+            <td id="vitesseVent"></td>
+            <td>
+                <button type="button" class="btn btn-primary" onclick="infosVent()">
+                    <i class="fas fa-plus" id="boutonVent"></i></button>
+            </td>
+        </tr>
+        <tr class="table-active" id="trDirectionVent" hidden>
+            <th scope="row" style="vertical-align: middle">Direction</th>
+            <td id="directionVent"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row" style="vertical-align: middle">Nuages</th>
+            <td id="nuages"></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-
-<div class="container" id="divErreur" hidden>
-    <h3 class="w3-text-red" id="erreurVille"></h3>
-</div>
-
-<table class="table" id="tableMeteo" hidden>
-    <tbody>
-    <tr id="trVille">
-        <th scope="row" style="vertical-align: middle; width:30%"><h4>Ville</h4></th>
-        <td class="text-capitalize"><h4 id="nomVille"></h4></td>
-        <td>
-            <button type="button" class="btn btn-primary" onclick="infosVille()"></button>
-            <i class="fas fa-plus" id="boutonVille"></i></td>
-    </tr>
-    <tr class="table-active" id="trLongitude" hidden>
-        <th scope="row" style="vertical-align: middle">Longitude</th>
-        <td id="longitude"></td>
-        <td></td>
-    </tr>
-    <tr class="table-active" id="trLatitude" hidden>
-        <th scope="row" style="vertical-align: middle">Latitude</th>
-        <td id="latitude"></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th scope="row" style="vertical-align: middle">Météo générale</th>
-        <td id="meteoGenerale"></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th scope="row" style="vertical-align: middle">Température</th>
-        <td id="temperature"></td>
-        <td>
-            <button type="button" class="btn btn-primary" onclick="infosTemperature()"></button>
-            <i class="fas fa-plus" id="boutonTemperature"></i></td>
-    </tr>
-    <tr class="table-active" id="trTemperatureMin" hidden>
-        <th scope="row" style="vertical-align: middle">Température minimale</th>
-        <td id="temperatureMin"></td>
-        <td></td>
-    </tr>
-    <tr class="table-active" id="trTemperatureMax" hidden>
-        <th scope="row" style="vertical-align: middle">Température maximale</th>
-        <td id="temperatureMax"></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th scope="row" style="vertical-align: middle">Humidité</th>
-        <td id="humidite"></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th scope="row" style="vertical-align: middle">Pression</th>
-        <td id="pression"></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th scope="row" style="vertical-align: middle">Vent</th>
-        <td id="vitesseVent"></td>
-        <td>
-            <button type="button" class="btn btn-primary" onclick="infosVent()"></button>
-            <i class="fas fa-plus" id="boutonVent"></i></td>
-    </tr>
-    <tr class="table-active" id="trDirectionVent" hidden>
-        <th scope="row" style="vertical-align: middle">Direction</th>
-        <td id="directionVent"></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th scope="row" style="vertical-align: middle">Nuages</th>
-        <td id="nuages"></td>
-        <td></td>
-    </tr>
-    </tbody>
-</table>
-
+<footer class="fixed-bottom page-footer font-small bg-dark">
+    <p class="text-center py-3 text-white">&copy; 2020 Loïc Travaillé</p>
+</footer>
 <script type="text/javascript" src="../res/js/meteo.js"></script>
 </body>
 </html>

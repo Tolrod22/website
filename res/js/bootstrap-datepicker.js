@@ -6,9 +6,9 @@
 
 (function(factory){
     if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
+        define(['res/js/jquery-3.4.1.min'], factory);
     } else if (typeof exports === 'object') {
-        factory(require('jquery'));
+        factory(require('res/js/jquery-3.4.1.min'));
     } else {
         factory(jQuery);
     }

@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="frameworks/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="res/css/bootstrap.css">
 
     <!-- JavaScripts -->
-    <script type="text/javascript" src="./frameworks/bootstrap/js/jquery.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="./frameworks/bootstrap/js/bootstrap.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="res/js/jquery-3.4.1.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="res/js/bootstrap.js" charset="UTF-8"></script>
 
     <title>Tolrod - Accueil</title>
     <link rel="icon" type="image/png" href="./res/pictures/ronflex.png"/>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand text-primary" href="./">Tolrod</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <a class="navbar-brand" href="./">Tolrod</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,14 +27,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link text-primary font-weight-bolder" href="./">Accueil<span
+                <a class="nav-link font-weight-bolder" href="./">Accueil<span
                         class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-primary" href="./meteo">Météo</a>
+                <a class="nav-link" href="./meteo">Météo</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button"
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     Calendriers
@@ -51,9 +51,12 @@
     </div>
 </nav>
 <div class="container">
-    <div class="mx-auto" style="width: 400px;">
+    <div class="mx-auto text-center">
         <img src="res/pictures/wip.png" class="img-fluid" alt="Responsive image">
     </div>
 </div>
+<footer class="fixed-bottom page-footer font-small bg-dark">
+    <p class="text-center py-3 text-white">&copy; 2020 Loïc Travaillé</p>
+</footer>
 </body>
 </html>

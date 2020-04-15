@@ -20,12 +20,11 @@ function meteo() {
                 document.getElementById("divErreur").hidden = true;
                 document.getElementById("tableMeteo").hidden = false;
             } else {
-                document.getElementById("erreurVille").innerHTML = "Cette ville n'existe pas";
                 document.getElementById("tableMeteo").hidden = true;
                 document.getElementById("divErreur").hidden = false;
             }
         }
-    }
+    };
     xhttp.open("GET", "//api.openweathermap.org/data/2.5/weather?q=" + ville + "&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
     xhttp.send();
 }
@@ -51,6 +50,7 @@ function infosVille() {
                 }
             }
         }
+        ;
     }
     xhttp.open("GET", "//api.openweathermap.org/data/2.5/weather?q=" + ville + ",fr&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
     xhttp.send();
@@ -77,6 +77,7 @@ function infosTemperature() {
                 }
             }
         }
+        ;
     }
     xhttp.open("GET", "//api.openweathermap.org/data/2.5/weather?q=" + ville + ",fr&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
     xhttp.send();
@@ -100,13 +101,14 @@ function infosVent() {
                 }
             }
         }
+        ;
     }
     xhttp.open("GET", "//api.openweathermap.org/data/2.5/weather?q=" + ville + ",fr&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
     xhttp.send();
 }
 
-function pressEnter(event) {
-    if (event.which === 13 || event.keyCode === 13) {
+function pressEnter(e) {
+    if (e.which === 13 || e.keyCode === 13) {
         meteo();
     }
 }

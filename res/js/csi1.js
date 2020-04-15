@@ -29,7 +29,7 @@ function filtrer() {
     let exterieur = '"' + document.getElementById("inputExterieur").value + '"';
     let date = document.getElementById("inputDate").value;
 
-    const requestURL = "./csi1.json";
+    const requestURL = "../res/json/csi1.json";
     const xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function () {
