@@ -1,4 +1,4 @@
-const requestURL = "./csi1.json";
+const requestURL = "../res/json/csi1.json";
 const xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
     if (xhttp.readyState === XMLHttpRequest.DONE) {
@@ -436,11 +436,10 @@ function cleanArray(array) {
 }
 
 function cleanString(string) {
-    let cleanString = string.replace('"', '').replace('"', '');
-    return cleanString
+    return string.replace('"', '').replace('"', '')
 }
 function pressEnter(event) {
-    if (event.which == 13 || event.keyCode == 13) {
+    if (event.which === 13 || event.keyCode === 13) {
         filtrer();
     }
 }

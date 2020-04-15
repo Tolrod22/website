@@ -5,12 +5,12 @@ function meteo() {
     let xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function () {
-        if (xhttp.readyState == XMLHttpRequest.DONE) {
-            if (xhttp.status == 200) {
+        if (xhttp.readyState === XMLHttpRequest.DONE) {
+            if (xhttp.status === 200) {
                 let json = JSON.parse(xhttp.responseText);
                 console.log(json);
-                document.getElementById("nomVille").innerHTML = ville + "      " + "<img src=\"//flags.fmcdn.net/data/flags/w580/" + json["sys"]["country"].toLowerCase() + ".png\" style=\"width:28px\">";
-                document.getElementById("meteoGenerale").innerHTML = json["weather"][0]["description"].charAt(0).toUpperCase() + json["weather"][0]["description"].slice(1).toLowerCase() + "   " + "<img src=\"//openweathermap.org/img/w/" + json["weather"][0]["icon"] + ".png\">";
+                document.getElementById("nomVille").innerHTML = ville + "      " + "<img src=\"//flags.fmcdn.net/data/flags/w580/" + json["sys"]["country"].toLowerCase() + ".png\" style=\"width:28px\" alt=''>";
+                document.getElementById("meteoGenerale").innerHTML = json["weather"][0]["description"].charAt(0).toUpperCase() + json["weather"][0]["description"].slice(1).toLowerCase() + "   " + "<img src=\"//openweathermap.org/img/w/" + json["weather"][0]["icon"] + ".png\" alt=''>";
                 document.getElementById("temperature").innerHTML = json["main"]["temp"] + " &deg;C";
                 document.getElementById("pression").innerHTML = json["main"]["pressure"] + " hPa";
                 document.getElementById("humidite").innerHTML = json["main"]["humidity"] + " %";
@@ -25,7 +25,7 @@ function meteo() {
                 document.getElementById("divErreur").hidden = false;
             }
         }
-    };
+    }
     xhttp.open("GET", "//api.openweathermap.org/data/2.5/weather?q=" + ville + "&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
     xhttp.send();
 }
@@ -35,12 +35,12 @@ function infosVille() {
     let xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function () {
-        if (xhttp.readyState == XMLHttpRequest.DONE) {
-            if (xhttp.status == 200) {
+        if (xhttp.readyState === XMLHttpRequest.DONE) {
+            if (xhttp.status === 200) {
                 let json = JSON.parse(xhttp.responseText);
                 document.getElementById("longitude").innerHTML = json["coord"]["lon"];
                 document.getElementById("latitude").innerHTML = json["coord"]["lat"]
-                if (document.getElementById("boutonVille").className == "fas fa-plus") {
+                if (document.getElementById("boutonVille").className === "fas fa-plus") {
                     document.getElementById("trLatitude").hidden = false;
                     document.getElementById("trLongitude").hidden = false;
                     document.getElementById("boutonVille").className = "fas fa-minus";
@@ -51,7 +51,6 @@ function infosVille() {
                 }
             }
         }
-        ;
     }
     xhttp.open("GET", "//api.openweathermap.org/data/2.5/weather?q=" + ville + ",fr&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
     xhttp.send();
@@ -62,12 +61,12 @@ function infosTemperature() {
     let xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function () {
-        if (xhttp.readyState == XMLHttpRequest.DONE) {
-            if (xhttp.status == 200) {
+        if (xhttp.readyState === XMLHttpRequest.DONE) {
+            if (xhttp.status === 200) {
                 let json = JSON.parse(xhttp.responseText);
                 document.getElementById("temperatureMin").innerHTML = json["main"]["temp_min"] + " &deg;C";
                 document.getElementById("temperatureMax").innerHTML = json["main"]["temp_max"] + " &deg;C";
-                if (document.getElementById("boutonTemperature").className == "fas fa-plus") {
+                if (document.getElementById("boutonTemperature").className === "fas fa-plus") {
                     document.getElementById("boutonTemperature").className = "fas fa-minus";
                     document.getElementById("trTemperatureMin").hidden = false;
                     document.getElementById("trTemperatureMax").hidden = false;
@@ -78,7 +77,6 @@ function infosTemperature() {
                 }
             }
         }
-        ;
     }
     xhttp.open("GET", "//api.openweathermap.org/data/2.5/weather?q=" + ville + ",fr&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
     xhttp.send();
@@ -89,11 +87,11 @@ function infosVent() {
     let xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function () {
-        if (xhttp.readyState == XMLHttpRequest.DONE) {
-            if (xhttp.status == 200) {
+        if (xhttp.readyState === XMLHttpRequest.DONE) {
+            if (xhttp.status === 200) {
                 let json = JSON.parse(xhttp.responseText);
                 document.getElementById("directionVent").innerHTML = json["wind"]["deg"] + " &deg;";
-                if (document.getElementById("boutonVent").className == "fas fa-plus") {
+                if (document.getElementById("boutonVent").className === "fas fa-plus") {
                     document.getElementById("boutonVent").className = "fas fa-minus";
                     document.getElementById("trDirectionVent").hidden = false;
                 } else {
@@ -102,14 +100,13 @@ function infosVent() {
                 }
             }
         }
-        ;
     }
     xhttp.open("GET", "//api.openweathermap.org/data/2.5/weather?q=" + ville + ",fr&APPID=ee07e2bf337034f905cde0bdedae3db8&units=metric&lang=fr", true);
     xhttp.send();
 }
 
 function pressEnter(event) {
-    if (event.which == 13 || event.keyCode == 13) {
+    if (event.which === 13 || event.keyCode === 13) {
         meteo();
     }
 }

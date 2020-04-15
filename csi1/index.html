@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="../frameworks/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../frameworks/bootstrap/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../frameworks/fontawesome.css">
 
     <!-- JavaScripts -->
-    <script type="text/javascript" src="../js/jquery-3.4.1.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="../js/bootstrap.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="../js/bootstrap-datepicker.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="../js/bootstrap-datepicker.fr.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../frameworks/bootstrap/js/jquery.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../frameworks/bootstrap/js/bootstrap.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../frameworks/bootstrap/js/bootstrap-datepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../frameworks/bootstrap/js/bootstrap-datepicker.fr.min.js" charset="UTF-8"></script>
 
     <title>Tolrod - CSI 1</title>
-    <link rel="icon" type="image/png" href="../images/ballon.png"/>
+    <link rel="icon" type="image/png" href="../res/pictures/ballon.png"/>
 </head>
 
 <body>
@@ -99,7 +98,7 @@
             <div class="input-group-prepend">
                 <label class="input-group-text">Date</label>
             </div>
-            <input type="text" class="form-control" id="inputDate" value="" onkeypress="pressEnter(event);">
+            <label for="inputDate"></label><input type="text" class="form-control" id="inputDate" value="" onkeypress="pressEnter(event);">
             <div class="input-group-append">
                 <span class="btn btn-outline-secondary"><i class="fas fa-calendar"></i></span>
             </div>
@@ -117,7 +116,7 @@
         <tr>
             <th style="width : 13%" scope="col">Date</th>
             <th style="width : 30%" scope="col">Domicile</th>
-            <th style="width : 7%" style="width : 6%" scope="col">Score</th>
+            <th style="width : 7%" scope="col">Score</th>
             <th style="width : 30%" scope="col">Extérieur</th>
             <th style="width : 13%" scope="col">Journéeq</th>
             <th style="width : 7%" scope="col">Heure</th>
@@ -146,6 +145,6 @@
     });
 </script>
 
-<script type="text/javascript" src="csi1.js"></script>
+<script type="text/javascript" src="../res/js/csi1.js"></script>
 </body>
 </html>
